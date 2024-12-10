@@ -1,3 +1,5 @@
+# Combinações Tipográficas
+
 Combinações Tipográficas - Teste combinações tipográficas facilmente!
 É uma web app desenvolvida para designers gráficos e web que precisam experimentar e testar combinações de fontes para seus projetos. Simples, rápido e eficaz, o "Tipografias" oferece uma interface intuitiva para visualizar como diferentes pares de fontes funcionam juntos em textos de exemplo.
 
