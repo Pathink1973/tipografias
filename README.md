@@ -41,6 +41,25 @@ nohup ./scripts/auto-update-repo.sh 300 > repo-update.log 2>&1 &
 */15 * * * * cd /caminho/do/repositorio && /usr/bin/bash ./scripts/auto-update-repo.sh
 ```
 
+
+## Vercel não recebeu a melhoria? (Checklist rápido)
+
+Mesmo com integração GitHub + Vercel, o deploy só acontece quando o commit está no remoto monitorado.
+
+1. Verifique se existe remote `origin`:
+   ```bash
+   git remote -v
+   ```
+2. Verifique se seu branch local tem upstream e se há commits pendentes de push:
+   ```bash
+   npm run deploy:check
+   ```
+3. Se houver commits locais, envie:
+   ```bash
+   git push
+   ```
+4. No Vercel, confirme se o **Production Branch** é o mesmo branch onde você fez push.
+
 O conteúdo está disponível sob a licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International, permitindo a partilha e adaptação, desde que seja atribuído o devido crédito, para fins não comerciais, e com distribuição sob os mesmos termos. Juntos, construímos um mundo mais inclusivo e acessível.
 Para mais informações sobre a licença, visite: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
