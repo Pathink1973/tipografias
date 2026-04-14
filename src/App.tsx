@@ -5,7 +5,7 @@ import { FontControls } from './components/FontControls';
 import { PopularCombinations } from './components/PopularCombinations';
 import { popularFontPairs } from './utils/fonts';
 import { translations } from './utils/translations';
-import { getUniqueFonts } from './utils/fontUtils';
+import { getUniqueFonts, buildGoogleFontsUrl } from './utils/fontUtils';
 import { Font } from './types/font';
 
 function App() {
@@ -16,13 +16,13 @@ function App() {
 
   useEffect(() => {
     const link = document.createElement('link');
-    link.href = `https://fonts.googleapis.com/css2?family=${headingFont.family.replace(' ', '+')}:wght@400;700&family=${bodyFont.family.replace(' ', '+')}:wght@400;600&display=swap`;
+    link.href = buildGoogleFontsUrl([headingFont, bodyFont]);
     link.rel = 'stylesheet';
     document.head.appendChild(link);
     return () => {
       document.head.removeChild(link);
     };
-  }, [headingFont.family, bodyFont.family]);
+  }, [headingFont, bodyFont]);
 
   useEffect(() => {
     const allFonts = popularFontPairs.flatMap(pair => [pair.heading, pair.body]);

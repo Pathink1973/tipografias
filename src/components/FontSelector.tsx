@@ -3,21 +3,23 @@ import { Font } from '../types/font';
 import { Settings } from 'lucide-react';
 
 interface FontSelectorProps {
+  id: string;
   label: string;
   selectedFont: Font;
   onFontChange: (font: Font) => void;
   fonts: Font[];
 }
 
-export function FontSelector({ label, selectedFont, onFontChange, fonts }: FontSelectorProps) {
+export function FontSelector({ id, label, selectedFont, onFontChange, fonts }: FontSelectorProps) {
   return (
     <div className="flex items-center gap-4">
       <div className="flex-1">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
           {label}
         </label>
         <div className="relative">
           <select
+            id={id}
             value={selectedFont.family}
             onChange={(e) => {
               const font = fonts.find(f => f.family === e.target.value);
