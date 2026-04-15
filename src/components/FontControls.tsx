@@ -37,12 +37,14 @@ export function FontControls({
       <div className="p-6">
         <div className="space-y-6">
           <FontSelector
+            id="heading-font"
             label={translations.headingFont}
             selectedFont={headingFont}
             onFontChange={onHeadingFontChange}
             fonts={fonts}
           />
           <FontSelector
+            id="body-font"
             label={translations.bodyFont}
             selectedFont={bodyFont}
             onFontChange={onBodyFontChange}
